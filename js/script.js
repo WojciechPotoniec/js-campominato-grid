@@ -11,10 +11,16 @@ con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
 
+// tmplate = <div class="square"></div>
+
 // creo una variabile button e seleziono il bottone dall'html tramite la classe
 let button = document.querySelector('btn');
 
 // aggiungo un ascoltatore al button, attraverso un click accadranno cose.
 button.addEventListener('click'){
+    
+    // ho creato un nuovo elemento da associare al DOM
+    const newEl = document.createElement('div');
+
 
 }
