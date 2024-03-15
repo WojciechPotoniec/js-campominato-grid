@@ -10,17 +10,34 @@ con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 
 con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
-
 // tmplate = <div class="square"></div>
 
-// creo una variabile button e seleziono il bottone dall'html tramite la classe
-let button = document.querySelector('btn');
 
-// aggiungo un ascoltatore al button, attraverso un click accadranno cose.
-button.addEventListener('click'){
+
+// creo una variabile btnplay e seleziono il bottone dall'html tramite l'id
+const btnplay = document.getElementById('play')
+
+// aggiungo un ascoltatore al button e attraverso un click accadranno cose.
+btnplay.addEventListener('click', function(){
     
-    // ho creato un nuovo elemento da associare al DOM
+})
+
+
+// creo una variabile btnreset e seleziono il bottone dall'html tramite l'id
+const btnreset = document.getElementById('reset')
+
+// aggiungo un ascoltatore al btnreset e attraverso un click accadranno cose.
+btnreset.addEventListener('click', function(){
+
+})
+
+
+function generateGridSquare(){
+
+    // definisco una variabile non riassegnabile per creare un elemento <div></div>
     const newEl = document.createElement('div');
 
+    //aggiungo all'elemento la classe square
+    newEl.classList.add('square');
 
 }
