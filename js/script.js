@@ -15,13 +15,13 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 
 // creo una variabile btnplay e seleziono il bottone dall'html tramite l'id
 const btnplay = document.getElementById("play");
-console.log(btnplay);
 
+// creo una variabile globale e selezione l'elemento grid del DOM tramite id
 const grid = document.getElementById("grid");
 
 // aggiungo un ascoltatore al button e attraverso un click accadranno cose.
 btnplay.addEventListener("click", function () {
-    
+
     // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
   for (let index = 0; index < 100; index++) {
     grid.appendChild(generateNewGridSquare(index + 1));
@@ -31,16 +31,16 @@ btnplay.addEventListener("click", function () {
 function generateNewGridSquare(content) {
   
     // definisco una variabile non riassegnabile per creare un nuovo elemento nel DOM <div></div>
-  const newEl = document.createElement("div");
+    const newEl = document.createElement("div");
   
-  // aggiungo del contenuto all'interno della variabile newEl = <div></div>
+    // aggiungo del contenuto all'interno della variabile newEl = <div></div>
     newEl.innerHTML = '<span>' + content + '</span>';
 
-  //aggiungo all'elemento la classe .square
-  newEl.classList.add("square");
+    //aggiungo all'elemento la classe .square
+    newEl.classList.add("square");
 
-  // ritorno l'elemento fuori dalla funzione
-  return newEl;
+    // ritorno l'elemento fuori dalla funzione
+    return newEl;
 }
 
 // creo una variabile btnreset e seleziono il bottone dall'html tramite l'id
