@@ -24,7 +24,17 @@ btnplay.addEventListener("click", function () {
 
     // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
   for (let index = 0; index < 100; index++) {
-    grid.appendChild(generateNewGridSquare(index + 1));
+    const newSquare = generateNewGridSquare(index + 1);
+
+    newSquare.addEventListener('click', function(){
+        if(index % 2){
+            newSquare.classList.add('even');
+        }else newSquare.classList.add('odd');
+        console.log(index + 1);
+    })
+
+    // aggiungo un nuovo quadrato alla grid che ho precedentemente selezionata
+    grid.appendChild(newSquare);
   }
 });
 

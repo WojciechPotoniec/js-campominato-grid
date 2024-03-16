@@ -16,9 +16,16 @@ section#grid div.square {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 section#grid,
 div.square {
     border: 1px solid black;
     font-weight: bold;
+}
+div.square.even{
+    background-color: rgb(0, 167, 0);
+}
+div.square.odd{
+    background-color: rgb(0, 0, 167);
 }
