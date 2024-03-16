@@ -21,42 +21,80 @@ const btnplay = document.getElementById("play");
 
 // aggiungo un ascoltatore al button e attraverso un click accadranno cose.
 btnplay.addEventListener("click", function () {
-    grid.innerHTML = "";
-    
+  grid.innerHTML = "";
+  const select = document.querySelector("select").value;
+  if (select === "easy") {
     // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
-  for (let index = 0; index < 100; index++) {
-    const newSquare = generateNewGridSquare(index + 1);
+    for (let index = 0; index < 100; index++) {
+      const newSquare = generateNewGridSquare(index + 1);
+      newSquare.classList.add("easy");
 
-    newSquare.addEventListener('click', function(){
-        if(isEven(index)){
-            newSquare.classList.add('even');
-        }else newSquare.classList.add('odd');
+      newSquare.addEventListener("click", function () {
+        if (isEven(index)) {
+          newSquare.classList.toggle("even");
+        } else newSquare.classList.toggle("odd");
         console.log(index + 1);
-    })
+      });
 
-    // aggiungo un nuovo quadrato alla grid che ho precedentemente selezionata
-    grid.appendChild(newSquare);
+      // aggiungo un nuovo quadrato alla grid che ho precedentemente selezionata
+      grid.appendChild(newSquare);
+    }
+  } else if (select === "medium") {
+    // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
+    for (let index = 0; index < 81; index++) {
+      const newSquare = generateNewGridSquare(index + 1);
+
+      newSquare.classList.add("medium");
+
+      newSquare.addEventListener("click", function () {
+        if (isEven(index)) {
+          newSquare.classList.toggle("even");
+        } else newSquare.classList.toggle("odd");
+        console.log(index + 1);
+      });
+
+      // aggiungo un nuovo quadrato alla grid che ho precedentemente selezionata
+      grid.appendChild(newSquare);
+    }
   }
+  // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
+  else
+    for (let index = 0; index < 49; index++) {
+      const newSquare = generateNewGridSquare(index + 1);
+        // aggiunta classe hard all'elemento precedentemente proso e associato alla funzione per generare 1 quadrato
+      newSquare.classList.add("hard");
+
+      newSquare.addEventListener("click", function () {
+        if (isEven(index)) {
+          newSquare.classList.toggle("even");
+        } else newSquare.classList.toggle("odd");
+        console.log(index + 1);
+      });
+
+      // aggiungo un nuovo quadrato alla grid che ho precedentemente selezionata
+      grid.appendChild(newSquare);
+    }
 });
 
 function generateNewGridSquare(content) {
-  
-    // definisco una variabile non riassegnabile per creare un nuovo elemento nel DOM <div></div>
-    const newEl = document.createElement("div");
-  
-    // aggiungo del contenuto all'interno della variabile newEl = <div></div>
-    newEl.innerHTML = '<span>' + content + '</span>';
+  // definisco una variabile non riassegnabile per creare un nuovo elemento nel DOM <div></div>
+  const newEl = document.createElement("div");
 
-    //aggiungo all'elemento la classe .square
-    newEl.classList.add("square");
+  // aggiungo del contenuto all'interno della variabile newEl = <div></div>
+  newEl.innerHTML = "<span>" + content + "</span>";
 
-    // ritorno l'elemento fuori dalla funzione
-    return newEl;
+  //aggiungo all'elemento la classe .square
+  newEl.classList.add("square");
+
+  // ritorno l'elemento fuori dalla funzione
+  return newEl;
 }
-function isEven(number){
-    if(number % 2 === 0){
-        return true;
-    }else return false;
+
+// creata funzione per determinare se un numero che divisibile per 2 riporta resto 0 e ritorna true 
+function isEven(number) {
+  if (number % 2 === 0) {
+    return true;
+  } else return false;
 }
 
 // creo una variabile btnreset e seleziono il bottone dall'html tramite l'id
@@ -64,7 +102,6 @@ const btnreset = document.getElementById("reset");
 
 // aggiungo un ascoltatore al btnreset e attraverso un click accadranno cose.
 btnreset.addEventListener("click", function () {
-  
-    // rimuovo gli elementi contenuti nella griglia
-    grid.innerHTML = "";
+  // rimuovo gli elementi contenuti nella griglia
+  grid.innerHTML = "";
 });
