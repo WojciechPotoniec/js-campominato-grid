@@ -21,14 +21,20 @@ const grid = document.getElementById("grid");
 
 // aggiungo un ascoltatore al button e attraverso un click accadranno cose.
 btnplay.addEventListener("click", function () {
+    
+    // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
   for (let index = 0; index < 100; index++) {
-    grid.appendChild(generateNewGridSquare());
+    grid.appendChild(generateNewGridSquare(index + 1));
   }
 });
 
-function generateNewGridSquare() {
-  // definisco una variabile non riassegnabile per creare un nuovo elemento nel DOM <div></div>
+function generateNewGridSquare(content) {
+  
+    // definisco una variabile non riassegnabile per creare un nuovo elemento nel DOM <div></div>
   const newEl = document.createElement("div");
+  
+  // aggiungo del contenuto all'interno della variabile newEl = <div></div>
+    newEl.innerHTML = '<span>' + content + '</span>';
 
   //aggiungo all'elemento la classe .square
   newEl.classList.add("square");
@@ -42,6 +48,7 @@ const btnreset = document.getElementById("reset");
 
 // aggiungo un ascoltatore al btnreset e attraverso un click accadranno cose.
 btnreset.addEventListener("click", function () {
+  
     // rimuovo gli elementi contenuti nella griglia
-  grid.innerHTML = "";
+    grid.innerHTML = "";
 });
