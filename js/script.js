@@ -13,11 +13,11 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 
 // tmplate = <div class="square"></div>
 
-// creo una variabile btnplay e seleziono il bottone dall'html tramite l'id
-const btnplay = document.getElementById("play");
-
 // creo una variabile globale e selezione l'elemento grid del DOM tramite id
 const grid = document.getElementById("grid");
+
+// creo una variabile btnplay e seleziono il bottone dall'html tramite l'id
+const btnplay = document.getElementById("play");
 
 // aggiungo un ascoltatore al button e attraverso un click accadranno cose.
 btnplay.addEventListener("click", function () {
