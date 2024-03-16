@@ -23,9 +23,17 @@ div.square {
     border: 1px solid black;
     font-weight: bold;
 }
+div.square > span{
+    display: none;
+}
 div.square.even{
     background-color: rgb(0, 167, 0);
+    display: inline;
 }
 div.square.odd{
     background-color: rgb(0, 0, 167);
+}
+div.square.odd > span,
+div.square.even > span{
+    display: inline;
 }
