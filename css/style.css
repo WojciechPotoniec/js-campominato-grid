@@ -28,7 +28,6 @@ div.square > span{
 }
 div.square.even{
     background-color: rgb(0, 167, 0);
-    display: inline;
 }
 div.square.odd{
     background-color: rgb(0, 0, 167);
