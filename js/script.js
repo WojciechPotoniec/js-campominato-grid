@@ -58,7 +58,7 @@ btnplay.addEventListener("click", function () {
     }
   }
   // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
-  else
+  else{
     for (let index = 0; index < 49; index++) {
       const newSquare = generateNewGridSquare(index + 1);
         // aggiunta classe hard all'elemento precedentemente proso e associato alla funzione per generare 1 quadrato
@@ -73,7 +73,7 @@ btnplay.addEventListener("click", function () {
 
       // aggiungo un nuovo quadrato alla grid che ho precedentemente selezionata
       grid.appendChild(newSquare);
-    }
+    }}
 });
 
 function generateNewGridSquare(content) {
