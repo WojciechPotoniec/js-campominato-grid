@@ -21,13 +21,14 @@ const btnplay = document.getElementById("play");
 
 // aggiungo un ascoltatore al button e attraverso un click accadranno cose.
 btnplay.addEventListener("click", function () {
-
+    grid.innerHTML = "";
+    
     // creo un ciclo for per inserire all'interno di grid un quadrato con un numero all'interno
   for (let index = 0; index < 100; index++) {
     const newSquare = generateNewGridSquare(index + 1);
 
     newSquare.addEventListener('click', function(){
-        if(index % 2){
+        if(isEven(index)){
             newSquare.classList.add('even');
         }else newSquare.classList.add('odd');
         console.log(index + 1);
@@ -51,6 +52,11 @@ function generateNewGridSquare(content) {
 
     // ritorno l'elemento fuori dalla funzione
     return newEl;
+}
+function isEven(number){
+    if(number % 2 === 0){
+        return true;
+    }else return false;
 }
 
 // creo una variabile btnreset e seleziono il bottone dall'html tramite l'id
