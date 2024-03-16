@@ -11,6 +11,14 @@ section#grid {
 section#grid div.square {
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 2px solid black;
     cursor: crosshair;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section#grid,
+div.square {
+    border: 1px solid black;
+    font-weight: bold;
 }
